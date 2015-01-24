@@ -84,6 +84,7 @@ GameObject:
   - 4: {fileID: 187821624}
   - 20: {fileID: 187821626}
   - 81: {fileID: 187821625}
+  - 114: {fileID: 187821628}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -144,6 +145,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!114 &187821628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187821623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4447cc7cb6a527240adc94404e6e2479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeTo: {fileID: 2100000, guid: fabb262d519509444b4a58ae9cb2a277, type: 2}
+  mainButtonScript: {fileID: 0}
 --- !u!1 &294424299
 GameObject:
   m_ObjectHideFlags: 0
