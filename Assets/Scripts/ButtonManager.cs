@@ -9,10 +9,17 @@ public class ButtonManager : MonoBehaviour {
 
 	public int counter = 0;
 
+	public GUIStyle myStyle;
+
+	private string myGUIText;
+
+	private float timer = -10f;
+
 	//public bool pressed = false;
 	
 	// Use this for initialization
 	void Start () {
+
 
 		buttonList = GameObject.FindObjectsOfType<ButtonScript> ();
 
@@ -28,7 +35,9 @@ public class ButtonManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		timer-=Time.deltaTime;
+
 	}
 
 
@@ -80,10 +89,21 @@ public class ButtonManager : MonoBehaviour {
 	}
 
 	
-	public class ExampleClass : MonoBehaviour {
-		void OnGUI() {
-			GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "This is a title");
+
+
+	void OnGUI() {
+
+		if(timer>0){
+		//GUI.backgroundColor = Color.black;
+		//GUI.Box(new Rect(0, (Screen.height/2)+80, Screen.width/2, Screen.height), "This is a title",myStyle);
+			GUI.Box(new Rect(0, (Screen.height/2)+80, Screen.width/2, Screen.height), myGUIText);
 		}
+	}
+
+	public void setMessage(string message, float timeOut){
+		myGUIText = message;
+		timer = timeOut;
+	
 	}
 
 
