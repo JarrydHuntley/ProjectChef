@@ -8,6 +8,7 @@ public class ButtonScript : MonoBehaviour {
 
 	public string description;
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,5 +17,11 @@ public class ButtonScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public string returnMatertialName(){
+	
+		return this.gameObject.renderer.material.name.Replace ("(Instance)","");
+			
 	}
 }
