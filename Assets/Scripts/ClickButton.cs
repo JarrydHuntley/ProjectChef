@@ -27,24 +27,28 @@ public class ClickButton : MonoBehaviour {
 				// the object identified by hit.transform was clicked
 				// do whatever you want
 
-				//Debug.Log("Touched something.");
+				Debug.Log("Touched something.");
 
 
 				//if(hit.transform.tag == "Button"){
 
 
+				if(hit.transform.root.transform.GetComponent<ButtonScript>()){
 
 
-				if(hit.transform.GetComponent<ButtonScript>()){
+					int hitID = hit.transform.root.transform.GetComponent<ButtonScript>().GetInstanceID();
 
-					int hitID = hit.transform.GetComponent("ButtonScript").GetInstanceID();
-
+					Debug.Log("Touched button.");
 					if(mainButtonScript.getInstanceIDAtCounter() == hitID)
 					{
-						hit.collider.renderer.material = changeTo;
+						hit.transform.root.collider.renderer.material = changeTo;
 						//Debug.Log("Touched button.");
+						Renderer[] cList =hit.transform.root.GetComponentsInChildren<Renderer>();
+						foreach (Renderer child in cList) {
+							child.gameObject.renderer.material = changeTo;
+						}
 
-						hit.transform.GetComponent<ButtonScript>().pressed = true;
+						hit.transform.root.transform.GetComponent<ButtonScript>().pressed = true;
 						mainButtonScript.inctCounter();
 
 						mainButtonScript.allButtonsPressed();
