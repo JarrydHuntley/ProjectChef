@@ -8,6 +8,7 @@ namespace UnitySampleAssets.Characters.FirstPerson
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+		public Animator anim;
 
         //////////////////////// exposed privates ///////////////////////
         [SerializeField] private bool _isWalking;
@@ -200,6 +201,9 @@ namespace UnitySampleAssets.Characters.FirstPerson
             // set the desired speed to be walking or running
             speed = _isWalking ? walkSpeed : runSpeed;
             _input = new Vector2(horizontal, vertical);
+
+			anim.SetBool ("Walking", horizontal != 0f || vertical != 0f);
+			
 
             // normalize input if it exceeds 1 in combined length:
             if (_input.sqrMagnitude > 1) _input.Normalize();

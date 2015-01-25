@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ClickButton : MonoBehaviour {
 
+	public Animator anim;
 	public Material changeTo;
 	public ButtonManager mainButtonScript;
 
@@ -18,6 +19,8 @@ public class ClickButton : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetMouseButtonDown(0)){
+
+			anim.SetTrigger ("PushButton");
 
 			// if left button pressed...
 			Ray ray = camera.ScreenPointToRay(Input.mousePosition);
