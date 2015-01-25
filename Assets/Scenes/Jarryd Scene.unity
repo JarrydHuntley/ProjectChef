@@ -463,6 +463,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+  levelTimer: 100
 --- !u!1 &286366038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1008,18 @@ Prefab:
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: walkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: jumpSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -1740,7 +1753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 5ede001b80548a04e8f236d9d1034a16, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: 5ede001b80548a04e8f236d9d1034a16, type: 3}
       propertyPath: m_LocalScale.x
@@ -2007,10 +2020,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isWalking: 1
-  walkSpeed: 8
-  runSpeed: 12
+  walkSpeed: 5
+  runSpeed: 5
   runstepLenghten: .610000014
-  jumpSpeed: 35
+  jumpSpeed: 0
   stickToGroundForce: 10
   _gravityMultiplier: .25
   _mouseLook:
@@ -2355,7 +2368,7 @@ GameObject:
   - 23: {fileID: 2054156280}
   - 114: {fileID: 2054156279}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: LevelStartCol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2385,7 +2398,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d58d782056743a145954439549eec2e6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2400,7 +2413,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054156278}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2419,7 +2432,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054156278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.76000023, y: .50999999, z: 40.6699982}
+  m_LocalPosition: {x: -4.76000023, y: 1.21000004, z: 40.6300011}
   m_LocalScale: {x: 3.45445538, y: .965495586, z: .0920573175}
   m_Children: []
   m_Father: {fileID: 0}

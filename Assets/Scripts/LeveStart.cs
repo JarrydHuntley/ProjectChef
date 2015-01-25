@@ -21,26 +21,13 @@ public class LeveStart : MonoBehaviour {
 	void OnTriggerEnter(Collider other)
 	{
 
-		Debug.Log ("Collision");
 		if (other.gameObject.tag == "Player") {
 		
-			mainButtonScript.setMessage("Sorry to awaken from your nap chef Wilson but the caption abbandoned the ship in fear of his life. You only have a few minutes before you crash. I will try to walk you through how to fix things over the radio but I can't remember the consoles too well...",20000);
+			mainButtonScript.setMessage(" Sorry to awaken you from your nap chef Wilson but the caption abandoned \n the submarine in fear of his life."
+				+" You only have a few minutes before you crash! \n I will try to walk you through how to fix " +
+			                            "things over \n the radio but I can't remember the consoles too well...",12);
 		}
 		 
 	}
 
-	void OnControllerColliderHit(ControllerColliderHit hit) {
-
-		Debug.Log ("Collision");
-
-	}
-
-	void OnCollisionEnter (Collision col)
-	{
-		Debug.Log ("Collision");
-		if(col.gameObject.name == "prop_powerCube")
-		{
-			Destroy(col.gameObject);
-		}
-	}
 }
