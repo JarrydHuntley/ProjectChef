@@ -18,6 +18,11 @@ public class ButtonManager : MonoBehaviour {
 
 		Shuffle (buttonList);
 
+		foreach(ButtonScript button in buttonList)
+		{
+			Debug.Log(button.description);
+			
+		}
 		//pressThisButton();
 	}
 	
@@ -26,12 +31,33 @@ public class ButtonManager : MonoBehaviour {
 		
 	}
 
-	//public GameObject buttonAtCounter(){
+
+	public ButtonScript getButtonAtCounter(){
 
 
-	//	buttonList[counter]
-	//}
+		return buttonList[counter];
+	}
+
+
+	public int getInstanceIDAtCounter(){
+		
+		if (counter  < buttonList.Length) {
+		
+			return buttonList[counter].GetInstanceID();
+		}
+
+		return buttonList.Length-1;
+	}
+
+
+	public void inctCounter(){
+		
 	
+		counter++;
+
+		Debug.Log ("Increment counter. Counter is"+counter);
+	}
+
 
 	public void allButtonsPressed(){
 		

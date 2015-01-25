@@ -31,13 +31,24 @@ public class ClickButton : MonoBehaviour {
 
 
 				//if(hit.transform.tag == "Button"){
-				if( hit.transform.GetComponent<ButtonScript>() ){
 
-					hit.collider.renderer.material = changeTo;
-					//Debug.Log("Touched button.");
-					//hit.transform.GetComponent<ButtonScript>().pressed = true;
 
-					mainButtonScript.allButtonsPressed();
+
+
+				if(hit.transform.GetComponent<ButtonScript>()){
+
+					int hitID = hit.transform.GetComponent("ButtonScript").GetInstanceID();
+
+					if(mainButtonScript.getInstanceIDAtCounter() == hitID)
+					{
+						hit.collider.renderer.material = changeTo;
+						//Debug.Log("Touched button.");
+
+						hit.transform.GetComponent<ButtonScript>().pressed = true;
+						mainButtonScript.inctCounter();
+
+						mainButtonScript.allButtonsPressed();
+					}
 
 				}
 			}
